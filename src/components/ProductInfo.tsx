@@ -1,7 +1,7 @@
 
 const ProductInfo = () => {
   return (
-    <div className="container flex flex-col items-center gap-6 px-4 pb-10 w-[90%] max-w-[400px] bg-white shadow-md  rounded-md">
+    <div className="container flex flex-col items-center gap-6 px-4 pb-10 w-[90%] max-w-[400px] bg-white shadow-md rounded-md my-10 ">
         <div className=" flex flex-col gap-2 text-center py-4 border-b-2">
             <h2 className="font-bold text-3xl">$89,914</h2>
             <span className="text-darkCyan">of $100,000 backed</span>

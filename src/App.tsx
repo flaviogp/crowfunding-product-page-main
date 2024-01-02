@@ -1,3 +1,4 @@
+import About from './components/About'
 import Header from './components/Header'
 import HeroImages from './components/HeroImages'
 import PresentationContainer from './components/PresentationContainer'
@@ -10,6 +11,7 @@ function App() {
       <HeroImages />
       <PresentationContainer />
       <ProductInfo />
+      <About />
     </div>
   )
 }
