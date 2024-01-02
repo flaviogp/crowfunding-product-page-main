@@ -5,7 +5,7 @@ import ProductInfo from './components/ProductInfo'
 function App() {
 
   return (
-    <div className="container flex flex-col items-center gap-10 w-full max-w-[1400px] justify-center"> 
+    <div className="container flex flex-col items-center w-full max-w-[1400px] justify-center"> 
       <Header />
       <HeroImages />
       <PresentationContainer />
