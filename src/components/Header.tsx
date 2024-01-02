@@ -12,7 +12,7 @@ const Header = () => {
     const ImageHamburguerMenu = <img src={HamburguerMenu} alt="hamburguer menu" />
     const ImageCloseMenu = <img src={CloseMenu} alt="close hamburguer menu" />
     const MobileMenu = ( 
-            <nav className='lg:hidden absolute top-[100%] right-[5%] flex flex-col gap-4 bg-white w-[90%] max-w-[350px] h-max rounded-md'>
+            <nav className='sm:hidden absolute top-[100%] right-[5%] flex flex-col gap-4 bg-white w-[90%] h-max rounded-md'>
                     <ul>
                     <li className='p-4 border-b-2 font-semibold'>About</li>
                     <li className='p-4 border-b-2 font-semibold'>Discover</li>
