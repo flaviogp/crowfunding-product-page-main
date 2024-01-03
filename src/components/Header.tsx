@@ -2,6 +2,9 @@ import { useState } from 'react'
 import Brand from '../assets/images/logo.svg'
 import HamburguerMenu from '../assets/images/icon-hamburger.svg'
 import CloseMenu from '../assets/images//icon-close-menu.svg'
+
+import Background from './background'
+
 const Header = () => {
     const [openMenu, setOpenMenu] = useState(false);
 
@@ -12,16 +15,18 @@ const Header = () => {
     const ImageHamburguerMenu = <img src={HamburguerMenu} alt="hamburguer menu" />
     const ImageCloseMenu = <img src={CloseMenu} alt="close hamburguer menu" />
     const MobileMenu = ( 
-            <nav className='sm:hidden absolute top-[100%] right-[5%] flex flex-col gap-4 bg-white w-[90%] h-max rounded-md'>
+            <nav className='sm:hidden absolute top-[150%] right-[5%] flex flex-col gap-4 bg-white w-[90%] h-max rounded-md'>
                     <ul>
-                    <li className='p-4 border-b-2 font-semibold'>About</li>
-                    <li className='p-4 border-b-2 font-semibold'>Discover</li>
-                    <li className='p-4 font-semibold'>Get Started</li>
+                    <li className='p-4 border-b-2 font-semibold cursor-pointer'>About</li>
+                    <li className='p-4 border-b-2 font-semibold cursor-pointer'>Discover</li>
+                    <li className='p-4 font-semibold cursor-pointer'>Get Started</li>
                 </ul>
             </nav>
         )
+
+
   return (  
-    <header className="container relative w-full h-[50px] flex justify-between p-3">
+    <header className="container w-full h-[50px] flex justify-between p-3 z-[2] fixed top-0 left-0 bg-black/20">
         <div className="relative">
             <img src={Brand} alt="Logo" />
         </div>
@@ -38,6 +43,7 @@ const Header = () => {
             {openMenu ? ImageCloseMenu : ImageHamburguerMenu}
         </button>
         {openMenu && MobileMenu}
+        {openMenu && <Background />}
     </header>
   )
 }
