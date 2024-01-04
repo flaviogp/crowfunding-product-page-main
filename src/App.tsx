@@ -7,12 +7,14 @@ import ProductInfo from './components/ProductInfo'
 
 
 import BackThisProject from './components/BackThisProject'
+import Thanks from './components/Thanks'
 
 function App() {
 
   const [ openProject, setOpenProject ] = useState(false)
-  
+  const [choiceReward, setChoiceReward] = useState(false)
   const handleClick = () => setOpenProject(!openProject)
+  const handleChoiceReward = (val: boolean) => setChoiceReward(val)
 
   return (
     <div className="container flex flex-col items-center w-full max-w-[1400px] justify-center relative"> 
@@ -21,7 +23,9 @@ function App() {
       <PresentationContainer handleClick={handleClick} />
       <ProductInfo />
       <About />
-      {openProject && <BackThisProject />}
+      {openProject && !choiceReward && <BackThisProject handleChoiceReward={handleChoiceReward}/>}
+      {choiceReward && <Thanks />}
+
     </div>
   )
 }

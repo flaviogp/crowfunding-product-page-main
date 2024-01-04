@@ -21,8 +21,12 @@ const descMahogany = `
 You get two Special Edition Mahogany stands, a Backer T-Shirt, and a
 personal thank you. You'll be added to our Backed member list Shipping is included.
 `
+interface BackThisProjectProps {
+    handleChoiceReward: (val: boolean) => void
+}
 
-const BackThisProject = () => {
+const BackThisProject = ({handleChoiceReward}: BackThisProjectProps) => {
+
   return (
     <div className="flex pt-44 justify-center w-full h-[450vh] bg-black/40 absolute">
         <div className="bg-white flex flex-col gap-6 p-8 w-[90%] h-max rounded-lg items-center">
@@ -39,29 +43,29 @@ const BackThisProject = () => {
             <SelectReward 
                 title='Pledge with no reward' 
                 description={descNoReward}
-                
-            />
+                handleChoiceReward={handleChoiceReward}              
+                />
             <SelectReward 
                 title='Bamboo Stand' 
                 pledge={25}
                 description={descBamboo}
-                itemsLeft={101}
-
-            />
+                itemsLeft={101}                
+                handleChoiceReward={handleChoiceReward}              
+                />
             <SelectReward 
                 title='Black Edition Stand' 
                 pledge={75}
                 description={descBlack}
-                itemsLeft={64}
-
-            />
+                itemsLeft={64}                
+                handleChoiceReward={handleChoiceReward}              
+                />
             <SelectReward 
                 title='Mahogany Special Edition' 
                 pledge={200}
                 description={descMahogany}
-                itemsLeft={0}
-
-            />
+                itemsLeft={0}                
+                handleChoiceReward={handleChoiceReward}              
+                />
         </div>
     </div>
   )
