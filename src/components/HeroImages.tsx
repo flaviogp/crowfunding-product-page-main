@@ -5,7 +5,7 @@ const HeroImages = () => {
     const imageMobile = <img src={HeroMobile} alt="mobile background hero" style={{objectFit: 'cover'}} className='w-full sm:hidden'/>;
     const imageDesktop = <img src={HeroDesktop} alt="desktop background hero" style={{objectFit: 'cover'}} className='w-full hidden sm:block'/>;
   return (
-    <div className="w-full flex justify-center mt-[-50px]">
+    <div className="w-full flex justify-center mt-[-50px] brightness-50 z-[-1]">
     {imageMobile}
     {imageDesktop}
   </div>

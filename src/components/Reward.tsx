@@ -8,8 +8,8 @@ interface RewardProps {
 
 const Reward = ({title, description, itemsLeft, pledge}: RewardProps) => {
   return (
-    <div className="container relative flex flex-col items-left gap-6 p-5 pb-10 w-[90%] max-w-[400px] bg-white border rounded-md">
-        <div>
+    <div className="container relative flex flex-col sm:flex-row sm:flex-wrap sm:justify-around items-left gap-6 p-5 pb-10 w-[90%] bg-white border rounded-md">
+        <div className="flex flex-col sm:flex-row sm:justify-around w-[100%]">
             <h2 className="font-bold text-xl">{title}</h2>
             <span className="text-moderateCyan font-medium">Pledge ${pledge} or more</span>
         </div>

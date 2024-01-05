@@ -19,7 +19,9 @@ const SelectReward = ({pledge, itemsLeft, description, title, handleChoiceReward
     const validSendForm = () => {
         if(!pledge) return;
 
-        if(amount < pledge) return setError(`o valor precisa ser $${pledge} ou maior`);
+        if(amount < pledge){ 
+            return setError(`The amount needs to be $${pledge} or more`);
+        }
 
         setError('')
         handleChoiceReward(true)
@@ -54,17 +56,19 @@ const SelectReward = ({pledge, itemsLeft, description, title, handleChoiceReward
 
         {
             activeInput && itemsLeft &&
-            <div className=" flex flex-col items-center gap-5 border-t-2 pt-6">
+            <div className=" flex flex-col items-center gap-5 border-t-2 pt-6 sm:flex-row sm:justify-between">
                 <p className=" text-darkGray text-lg">Enter your pledge</p>
-                <div className="flex justify-center gap-5 w-full">
-                    <input type="text" name="" id="" className="w-24 px-5 py-2 rounded-full border-2 text-center" onChange={(e) => setAmount(Number(e.currentTarget.value))}/>
-                    <button className="py-2 px-5 bg-moderateCyan rounded-full text-white"
-                        onClick={() => validSendForm()}
-                    >
-                        Continue
-                    </button>
-                </div>
+                <div className="flex flex-col items-center gap-5">
+                    <div className="flex justify-center gap-5 w-full">
+                        <input type="text" name="" id="" className="w-24 px-5 py-2 rounded-full border-2 text-center" onChange={(e) => setAmount(Number(e.currentTarget.value))}/>
+                        <a href='#thanks' className="py-2 px-5 bg-moderateCyan rounded-full text-white"
+                            onClick={() => validSendForm()}
+                        >
+                            Continue
+                        </a>
+                    </div>
                     {error && <p className="text-red-700 text-sm ">{error}</p> }
+                </div>
             </div>
         }
         {

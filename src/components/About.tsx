@@ -18,7 +18,7 @@ You get two Special Edition Mahogany stands, a Backer T-Shirt, and a
 personal thank you. You'll be added to our Backed member list Shipping is included.
 `
   return (
-    <div className="container flex flex-col items-center gap-6 p-4 pb-10 w-[90%] max-w-[400px] bg-white shadow-md  rounded-md">
+    <div id='about' className="container flex flex-col items-center gap-6 p-4 pb-10 w-[90%] max-w-[650px] bg-white shadow-md  rounded-md">
         <div className="w-[90%] text-left flex flex-col gap-4">
             <h2 className="font-bold text-xl">
                 About this project

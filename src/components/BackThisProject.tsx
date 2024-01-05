@@ -17,23 +17,24 @@ const descBlack = `
     You'll be added to our Backer member list Shipping is included.
 `
 
-const descMahogany = `
+const descMahogany = `s
 You get two Special Edition Mahogany stands, a Backer T-Shirt, and a
 personal thank you. You'll be added to our Backed member list Shipping is included.
 `
 interface BackThisProjectProps {
     handleChoiceReward: (val: boolean) => void
+    handleEndPledge: () => void
 }
 
-const BackThisProject = ({handleChoiceReward}: BackThisProjectProps) => {
+const BackThisProject = ({handleChoiceReward, handleEndPledge}: BackThisProjectProps) => {
 
   return (
-    <div className="flex pt-44 justify-center w-full h-[450vh] bg-black/40 absolute">
-        <div className="bg-white flex flex-col gap-6 p-8 w-[90%] h-max rounded-lg items-center">
+    <div className="flex pt-44 justify-center w-full h-[450vh] bg-black/40 absolute z-[3]">
+        <div className="sm:mt-[550px] sm:max-w-[650px] bg-white flex flex-col gap-6 p-8 w-[90%] h-max rounded-lg items-center">
             <div className=' w-full flex justify-between'>
                 <h2 className='font-bold text-2xl'>Back this project</h2>
                 <button>
-                    <img src={CloseImage} alt="close modal" />
+                    <img src={CloseImage} alt="close modal" onClick={handleEndPledge} />
                 </button>
             </div>
             <p className='text-darkGray'>

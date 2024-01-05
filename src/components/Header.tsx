@@ -3,7 +3,7 @@ import Brand from '../assets/images/logo.svg'
 import HamburguerMenu from '../assets/images/icon-hamburger.svg'
 import CloseMenu from '../assets/images//icon-close-menu.svg'
 
-import Background from './background'
+import Background from './Background'
 
 const Header = () => {
     const [openMenu, setOpenMenu] = useState(false);
@@ -26,16 +26,22 @@ const Header = () => {
 
 
   return (  
-    <header className="container w-full h-[50px] flex justify-between p-3 z-[2] fixed top-0 left-0 bg-black/20">
+    <header className="container w-full h-[50px] flex justify-between p-3 z-[2] fixed top-0 bg-black/20 sm:static sm:bg-transparent">
         <div className="relative">
             <img src={Brand} alt="Logo" />
         </div>
 
         <nav className='sm:flex lg:flex md:flex lg: items center justify-end hidden'>
             <ul className='flex gap-4 mr-5 text-white font-semibold'>
-                <li>About</li>
-                <li>Discover</li>
-                <li>Get Started</li>
+                <li>
+                    <a href="#about">About</a>
+                </li>
+                <li>
+                    <a href="#discover">Discover</a>
+                </li>
+                <li>
+                    <a href="#getStarted">Get Started</a>
+                </li>
             </ul>
         </nav>
 

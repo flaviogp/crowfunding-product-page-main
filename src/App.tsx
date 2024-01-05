@@ -13,18 +13,24 @@ function App() {
 
   const [ openProject, setOpenProject ] = useState(false)
   const [choiceReward, setChoiceReward] = useState(false)
+
+
+  const handleEndPledge = () => {
+    setOpenProject(false);
+    setChoiceReward(false)
+  }
   const handleClick = () => setOpenProject(!openProject)
   const handleChoiceReward = (val: boolean) => setChoiceReward(val)
 
   return (
-    <div className="container flex flex-col items-center w-full max-w-[1400px] justify-center relative"> 
+    <div className="scroll-smooth container flex flex-col items-center w-full max-w-[1400px] justify-center relative"> 
       <Header />
       <HeroImages />
       <PresentationContainer handleClick={handleClick} />
       <ProductInfo />
       <About />
-      {openProject && !choiceReward && <BackThisProject handleChoiceReward={handleChoiceReward}/>}
-      {choiceReward && <Thanks />}
+      {openProject && !choiceReward && <BackThisProject handleChoiceReward={handleChoiceReward} handleEndPledge={handleEndPledge}/>}
+      {choiceReward && <Thanks handleEndPledge={handleEndPledge}/>}
 
     </div>
   )
