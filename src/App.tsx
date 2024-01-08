@@ -1,7 +1,6 @@
 import { useState } from 'react' 
 
-import { Data } from './interfaces/interfaces'
-import{data as _data} from './data/data'
+import {data} from './data/data'
 
 import About from './components/About'
 import Header from './components/Header'
@@ -17,7 +16,6 @@ function App() {
 
   const [ openProject, setOpenProject ] = useState(false)
   const [choiceReward, setChoiceReward] = useState(false)
-  const [data, setData] = useState<Data[]>(_data)
 
   const handleEndPledge = () => {
     setOpenProject(false);

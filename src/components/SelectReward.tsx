@@ -18,7 +18,13 @@ const SelectReward = ({pledge, itemsLeft, description, title, handleChoiceReward
     const handleChange = () => setActiveInput(true)
 
     const validSendForm = () => {
-        if(!pledge && !noReward) return;
+        if(!pledge && noReward) {
+            setError('')
+            handleChoiceReward(true)
+            return;
+        }
+
+        if(!pledge) return
 
         if(!noReward && amount < pledge){
             return setError(`The amount needs to be $${pledge} or more`);
