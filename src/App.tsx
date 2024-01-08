@@ -1,19 +1,23 @@
 import { useState } from 'react' 
+
+import { Data } from './interfaces/interfaces'
+import{data as _data} from './data/data'
+
 import About from './components/About'
 import Header from './components/Header'
 import HeroImages from './components/HeroImages'
 import PresentationContainer from './components/PresentationContainer'
 import ProductInfo from './components/ProductInfo'
-
-
 import BackThisProject from './components/BackThisProject'
 import Thanks from './components/Thanks'
+
+
 
 function App() {
 
   const [ openProject, setOpenProject ] = useState(false)
   const [choiceReward, setChoiceReward] = useState(false)
-
+  const [data, setData] = useState<Data[]>(_data)
 
   const handleEndPledge = () => {
     setOpenProject(false);
@@ -28,7 +32,7 @@ function App() {
       <HeroImages />
       <PresentationContainer handleClick={handleClick} />
       <ProductInfo />
-      <About />
+      <About setOpenProject={setOpenProject} data={data}/>
       {openProject && !choiceReward && <BackThisProject handleChoiceReward={handleChoiceReward} handleEndPledge={handleEndPledge}/>}
       {choiceReward && <Thanks handleEndPledge={handleEndPledge}/>}
 

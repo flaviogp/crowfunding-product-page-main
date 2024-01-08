@@ -30,7 +30,7 @@ const SelectReward = ({pledge, itemsLeft, description, title, handleChoiceReward
   return (
     <div className={`relative flex flex-col gap-5 p-5 w-full rounded-lg border-2 ${activeInput ? 'border-moderateCyan' : 'border-inherit'} `}>
         <div className='flex gap-4 items-center'>
-            <input type="radio" name="select-reward" id="select-reward"  className='w-6 h-6 cursor-pointer' onChange={handleChange}  />
+            <input type="radio" name="select-reward" id={title[0]}  className='w-6 h-6 cursor-pointer' onChange={handleChange}  />
             <div>
                 <h3 className='font-bold text-lg'>{title}</h3>
                 {

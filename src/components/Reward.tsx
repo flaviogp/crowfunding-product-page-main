@@ -3,10 +3,11 @@ interface RewardProps {
     pledge: number
     description:string
     itemsLeft: number
+    setOpenProject: (arg: boolean) => void
 
 }
 
-const Reward = ({title, description, itemsLeft, pledge}: RewardProps) => {
+const Reward = ({title, description, itemsLeft, pledge, setOpenProject}: RewardProps) => {
   return (
     <div className="container relative flex flex-col sm:flex-row sm:flex-wrap sm:justify-around items-left gap-6 p-5 pb-10 w-[90%] bg-white border rounded-md">
         <div className="flex flex-col sm:flex-row sm:justify-around w-[100%]">
@@ -22,17 +23,18 @@ const Reward = ({title, description, itemsLeft, pledge}: RewardProps) => {
 
         {
             itemsLeft !== 0 ?
-                <button
+                <a href={`#${title[0]}`}
                     className="py-4 px-10 bg-moderateCyan rounded-full w-max font-bold text-white"
+                    onClick={() => setOpenProject(true)}
                 >
                     Select Reward
-                </button>
+                </a>
             :
-                <button
+                <a
                     className="py-4 px-10 bg-darkCyan rounded-full w-max font-bold text-white"
                 >
                     Out of Stock
-                </button>
+                </a>
         }
         {
             itemsLeft === 0 &&

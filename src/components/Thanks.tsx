@@ -9,7 +9,7 @@ const Thanks = ({handleEndPledge}: ThanksProps) => {
     <div id='thanks' className="flex pt-44 justify-center w-full h-[450vh] bg-black/40 absolute">
         <div className='sm:mt-[550px] sm:max-w-[650px] bg-white p-14 w-[90%] h-max flex flex-col items-center gap-6 rounded-lg z-[3]'>
             <img src={CheckIcon} alt="icon ckeck" />
-            <h2 className='font-bold text-2xl'>Thanks for yout support!</h2>
+            <h2 className='font-bold text-2xl'>Thanks for your support!</h2>
             <p className='text-darkGray text-center'>
                 Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser
                 worldwide. You will get an email once our campaign is completed

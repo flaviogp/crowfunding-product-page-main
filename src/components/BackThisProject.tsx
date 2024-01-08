@@ -17,7 +17,7 @@ const descBlack = `
     You'll be added to our Backer member list Shipping is included.
 `
 
-const descMahogany = `s
+const descMahogany = `
 You get two Special Edition Mahogany stands, a Backer T-Shirt, and a
 personal thank you. You'll be added to our Backed member list Shipping is included.
 `
