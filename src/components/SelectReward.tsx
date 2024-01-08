@@ -20,7 +20,7 @@ const SelectReward = ({pledge, itemsLeft, description, title, handleChoiceReward
     const validSendForm = () => {
         if(!pledge && !noReward) return;
 
-        if(!noReward && amount < pledge){ 
+        if(!noReward && amount < pledge){
             return setError(`The amount needs to be $${pledge} or more`);
         }
 
