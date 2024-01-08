@@ -24,15 +24,17 @@ const About = ({setOpenProject, data}: AboutProps) => {
             </p>
         </div>
 
-        {data.map((product) => (
-            <Reward
-                title={product.title} 
-                pledge={product.pledge}
-                description={product.description}
-                itemsLeft={product.itemsLeft}
-                setOpenProject={setOpenProject} 
-            />
-        ))}
+        {   data.map((product) => (
+                <Reward
+                    key={`${product.pledge}${product.itemsLeft}`}
+                    title={product.title} 
+                    pledge={product.pledge}
+                    description={product.description}
+                    itemsLeft={product.itemsLeft}
+                    setOpenProject={setOpenProject} 
+                />
+            ))
+        }
     </div>
   )
 }

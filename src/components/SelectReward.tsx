@@ -6,10 +6,11 @@ interface SelectRewardProps {
     title: string
     description: string
     handleChoiceReward: (val: boolean) => void
+    noReward: boolean
 }
 
 
-const SelectReward = ({pledge, itemsLeft, description, title, handleChoiceReward}: SelectRewardProps) => {
+const SelectReward = ({pledge, itemsLeft, description, title, handleChoiceReward, noReward}: SelectRewardProps) => {
 
     const [activeInput, setActiveInput] = useState(false)
     const [amount,setAmount] = useState(0);
@@ -17,9 +18,9 @@ const SelectReward = ({pledge, itemsLeft, description, title, handleChoiceReward
     const handleChange = () => setActiveInput(true)
 
     const validSendForm = () => {
-        if(!pledge) return;
+        if(!pledge && !noReward) return;
 
-        if(amount < pledge){ 
+        if(!noReward && amount < pledge){ 
             return setError(`The amount needs to be $${pledge} or more`);
         }
 
@@ -70,6 +71,18 @@ const SelectReward = ({pledge, itemsLeft, description, title, handleChoiceReward
                     {error && <p className="text-red-700 text-sm ">{error}</p> }
                 </div>
             </div>
+        }
+        {
+            activeInput && !itemsLeft &&
+            <div className=" flex flex-col items-center gap-5 border-t-2 pt-6 sm:flex-row sm:justify-between">
+                    <div className="flex justify-center gap-5 w-full">
+                        <a href='#thanks' className="py-2 px-5 bg-moderateCyan rounded-full text-white"
+                            onClick={() => validSendForm()}
+                        >
+                            Continue
+                        </a>
+                    </div>
+                </div>
         }
         {
             itemsLeft === 0 &&

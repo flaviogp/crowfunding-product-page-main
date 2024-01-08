@@ -1,4 +1,5 @@
 import CloseImage from '../assets/images/icon-close-modal.svg'
+import { Data } from '../interfaces/interfaces'
 import SelectReward from './SelectReward'
 
 
@@ -7,26 +8,14 @@ const descNoReward = `
 Choose to support us without a reward if you simply believe
 in our project. As a backer, you will be signed up to receive product updates via email.
 `
-const descBamboo = `
-    You get an ergonomic stand made of natural bamboo. You've helped
-    us launch our promotional campaingn, and you'll be added to a special
-    Backer member list.
-`
-const descBlack = `
-    You get Black Special Edition computer stand and a personal thank you
-    You'll be added to our Backer member list Shipping is included.
-`
 
-const descMahogany = `
-You get two Special Edition Mahogany stands, a Backer T-Shirt, and a
-personal thank you. You'll be added to our Backed member list Shipping is included.
-`
 interface BackThisProjectProps {
     handleChoiceReward: (val: boolean) => void
     handleEndPledge: () => void
+    data: Data[]
 }
 
-const BackThisProject = ({handleChoiceReward, handleEndPledge}: BackThisProjectProps) => {
+const BackThisProject = ({handleChoiceReward, handleEndPledge, data}: BackThisProjectProps) => {
 
   return (
     <div className="flex pt-44 justify-center w-full h-[450vh] bg-black/40 absolute z-[3]">
@@ -44,29 +33,22 @@ const BackThisProject = ({handleChoiceReward, handleEndPledge}: BackThisProjectP
             <SelectReward 
                 title='Pledge with no reward' 
                 description={descNoReward}
-                handleChoiceReward={handleChoiceReward}              
-                />
-            <SelectReward 
-                title='Bamboo Stand' 
-                pledge={25}
-                description={descBamboo}
-                itemsLeft={101}                
-                handleChoiceReward={handleChoiceReward}              
-                />
-            <SelectReward 
-                title='Black Edition Stand' 
-                pledge={75}
-                description={descBlack}
-                itemsLeft={64}                
-                handleChoiceReward={handleChoiceReward}              
-                />
-            <SelectReward 
-                title='Mahogany Special Edition' 
-                pledge={200}
-                description={descMahogany}
-                itemsLeft={0}                
-                handleChoiceReward={handleChoiceReward}              
-                />
+                handleChoiceReward={handleChoiceReward}      
+                noReward={true}        
+            />
+            {
+                data.map((product) => (
+                    <SelectReward 
+                        key={`${product.pledge}${product.itemsLeft}`}
+                        title={product.title} 
+                        pledge={product.pledge}
+                        description={product.description}
+                        itemsLeft={product.itemsLeft}
+                        handleChoiceReward={handleChoiceReward}
+                        noReward={false}
+                    />
+                ))
+            }
         </div>
     </div>
   )

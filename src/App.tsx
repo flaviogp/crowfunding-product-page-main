@@ -33,7 +33,7 @@ function App() {
       <PresentationContainer handleClick={handleClick} />
       <ProductInfo />
       <About setOpenProject={setOpenProject} data={data}/>
-      {openProject && !choiceReward && <BackThisProject handleChoiceReward={handleChoiceReward} handleEndPledge={handleEndPledge}/>}
+      {openProject && !choiceReward && <BackThisProject data={data} handleChoiceReward={handleChoiceReward} handleEndPledge={handleEndPledge}/>}
       {choiceReward && <Thanks handleEndPledge={handleEndPledge}/>}
 
     </div>
